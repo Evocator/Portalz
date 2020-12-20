@@ -1,7 +1,5 @@
 <template>
   <FormulateForm
-  action="68.183.138.116:30001/"
-   method="post"
     v-model="values"
     :keep-model-data="true"
     @submit="submitHandler"
@@ -193,7 +191,7 @@ v-if="values.quote === 'Website Buildout'"
 </template>
 
 <script>
-const axios2 = require('axios').default;
+const axios2 = require('axios');
 export default {
   data () {
     return {
@@ -206,17 +204,18 @@ export default {
     submitHandler (data) {
       alert(`Thank you, ${data}`);
       alert(JSON.stringify(data));
-      axios2.post('http://68.183.138.116:30001', {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-      })
-      .then(function (response) {
-      console.log(response);
-      })
-      .catch(function (error) {
-      console.log(error);
-      });
-alert(`Thank none`);
+      alert(`Thank none`);
+      axios2.post('http://68.183.138.116:30001/', {
+          firstName: 'Fred',
+          lastName: 'Flintstone'
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
     }
   }
 
